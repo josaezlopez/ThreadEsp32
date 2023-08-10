@@ -20,10 +20,12 @@ class Blink : public TaskParent{
       resume();
     }
 
+
     void stop(){
       digitalWrite(pin,!activeHigh);
       suspend();
     }
+
 
   void loop(){
     stop();
@@ -53,9 +55,12 @@ Blink led("TaskLed",LED_BUILTIN);
 
 void setup() {
   Serial.begin(115200);
-  led.on(2.0,0.5);
+  // Flash led 5Hz,WC = 50%
+  led.on(5.0,0.5);
+  // wait 10 seconds
   delay(10000);
-  led.stop();
+  // Flash led 1Hz,WC = 10%
+  led.on(1.0,0.1);
  
 }
 
@@ -63,5 +68,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+
+  
 }
 
