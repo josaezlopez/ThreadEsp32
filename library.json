@@ -1,0 +1,25 @@
+{
+    "name": "threadesp32",
+    "version": "1.0",
+    "description": "Clase base de la que derivar tareas de FreeRTOS",
+    "keywords": "task, freertos, esp32",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/josaezlopez/threadesp32.git"
+    },
+    "authors":
+    [
+      {
+        "name": "Jose A.",
+        "email": "josaezlopez@gmail.com",
+        "url": "https://github.com/josaezlopez"
+      }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/josaezlopez/threadesp32",
+    "dependencies": {
+    },
+    "frameworks": "arduino",
+    "platforms": "espressif32"
+  }
