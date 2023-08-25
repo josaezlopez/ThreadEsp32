@@ -26,7 +26,7 @@ class TaskParent{
         char name[ configMAX_TASK_NAME_LEN + 1 ];
         TaskHandle_t taskHandle = nullptr;
         uint32_t stackDepth;
-        static const uint8_t th_LOWEST_PRIORITY = 0;         
+        static const uint8_t th_LOWEST_PRIORITY = 1;         
         static const uint8_t th_MEDIUM_PRIORITY = ((configMAX_PRIORITIES + 1) / 4);        
         static const uint8_t th_HIGH_PRIORITY   = (((configMAX_PRIORITIES + 1 )/ 4) * 2);
         static const uint8_t th_VERY_HIGH_PRIORITY = (((configMAX_PRIORITIES + 1 )/ 4) * 3);     
