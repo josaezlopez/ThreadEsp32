@@ -16,7 +16,7 @@ class TaskParent{
         UBaseType_t getPriority();
         void setPriority(UBaseType_t newPriority);
         UBaseType_t getWaterMark();
-
+        TaskHandle_t getTaskHandle();
 
     protected:
         void taskDelay(uint32_t t);

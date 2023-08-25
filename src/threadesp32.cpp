@@ -51,3 +51,7 @@ void TaskParent::setPriority(UBaseType_t newPriority){
 UBaseType_t TaskParent::getWaterMark(){
     return uxTaskGetStackHighWaterMark( taskHandle );
 }
+
+TaskHandle_t TaskParent::getTaskHandle(){
+    return taskHandle;
+}
