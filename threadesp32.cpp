@@ -20,20 +20,31 @@ TaskParent::~TaskParent(){
 }
 
 
-
-
 void TaskParent::taskFunction(void* _param){
     TaskParent* p =   static_cast<TaskParent*>(_param);
     p->loop();
     }
 
+uint32_t TaskParent::getStackDepth(){
+    return stackDepth;
+    }
 
 void TaskParent::suspend(){ 
+    _isSuspended = true;
     vTaskSuspend(taskHandle); 
     }
 
 void TaskParent::resume(){  
+    _isSuspended = false;
     vTaskResume(taskHandle); 
+    }
+
+bool TaskParent::isSuspended(){
+    return _isSuspended;
+    }
+
+const char* TaskParent::getName(){ 
+    return name; 
     }
 
 void TaskParent::taskDelay(uint32_t t){
