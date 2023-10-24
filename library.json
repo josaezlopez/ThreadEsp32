@@ -20,6 +20,6 @@
     "homepage": "https://github.com/josaezlopez/threadesp32",
     "dependencies": {
     },
-    "frameworks": "arduino",
+    "frameworks": ["arduino", "freertos"]
     "platforms": "espressif32"
   }
