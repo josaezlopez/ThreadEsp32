@@ -1,6 +1,6 @@
 {
     "name": "threadesp32",
-    "version": "1.2",
+    "version": "1.3.0",
     "description": "Clase base de la que derivar tareas de FreeRTOS",
     "keywords": "task, freertos, esp32",
     "repository":
