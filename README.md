@@ -6,31 +6,32 @@ Parent class to derive FreeRTOS tasks in C++ from it.
 Create a class derived from TaskParent.  
 TaskParent is an abstract class and you will need to define the loop() function in the derived class, which will be the entry function to the task.
 
-#include <threadesp32.h>
-
-class Blink: public TaskParent {
->  public:
->>    Blink(const char*TaskName, uint8_tpinLed):TaskParent(TaskName,2048,TaskParent::th_MEDIUM_PRIORITY,1){
->>>    _pinLed = pinLed;
->>  }
-
->>void loop(){
->>>pinMode(_pinLed,OUTPUT);
->>>while (true) {  
->>>>digitalWrite(_pinLed, HIGH);  
->>>>delay(500);  
->>>>digitalWrite(_pinLed, LOW);  
->>>>delay(500);  
->>>}  
->>}  
->protected:  
->>uint8_t _pinLed;  
->>};  
-Blink LED("LED1",LED_BUILTIN);  
-void setup(){  
-}  
-void loop() {  
-}  
+        #include <threadesp32.h>  
+                
+        class Blink: public TaskParent {  
+                public:  
+                        Blink(const char*TaskName, uint8_tpinLed):TaskParent(TaskName,2048,TaskParent::th_MEDIUM_PRIORITY,1){
+                                _pinLed = pinLed;  
+                        }  
+                        void loop(){  
+                                pinMode(_pinLed,OUTPUT);  
+                                while (true){  
+                                        digitalWrite(_pinLed, HIGH);  
+                                        delay(500);  
+                                        digitalWrite(_pinLed, LOW);  
+                                        delay(500);
+                                }  
+                        }  
+                protected:  
+                        uint8_t _pinLed;  
+        };  
+        
+        Blink LED("LED1",LED_BUILTIN);  
+        
+        void setup(){  
+        }  
+        void loop() {  
+        }  
 
 
 In the constructor they pass the necessary parameters, in the example above, the name of the task and the pin to which the LED that will flash is connected. The constructor also starts the parent class.
