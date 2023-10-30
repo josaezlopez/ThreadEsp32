@@ -34,16 +34,16 @@ TaskParent es una clase abstracta, debes de definir en la clase derivada la func
         }  
 
 
-El contructor recibira los parametros necesarios, in the example above, el nombre de la tarea y el pin en el que está conectado el LED que destelleará.  
+El contructor recibirá los parametros necesarios, en el ejemplo de arriba, el nombre de la tarea y el pin en el que está conectado el LED que destelleará.  
 El constructor tambien inicia la clase padre.  
-The parameters passed to TaskParent are:
+Los parámetros que se pasan a TaskParent son:
 
 const char* _name → Nombre de la tarea  
 uint32_t _stackDepth → Tamaño de la pila  
 UBaseType_t _uxPriority → La prioridad de la tarea  
 BaseType_t _xCoreID) → El nucleo en el que se ejecutará  
 
-El LED parpadeara a la frecuancia de un herzio.  
+El LED parpadeara a la frecuencia de un herzio.  
 #TaskParent tiene los siguientes metodos:  
 
         void suspend();
@@ -53,7 +53,7 @@ Detiene la tarea.
 Reanuda la tarea.
 
         bool issuspended();
-true si la tarea se paró con suspend(), false si la tarea se detuvo con suspend()  
+true si la tarea se paró con suspend(), false si la tarea se reanudó con resume()  
 
         void setPriority(UBaseType_t newPriority);
 Cambia la prioridad de la tarea.
@@ -68,7 +68,7 @@ Devuelve la prioridad de la tarea.
 Retorna la watermark de la tarea.
 La watermark es la minima cantidad de memoria de la pila disponible durante la ejecucion de la tarea.
 La funcion retorna numero de palabras (en un procesador de 32 bits la palabra es de 4 bytes).  
-Un valor de retorna de cero indica que la pila se ha desbordado. Un valor cercanoa cero indica que la pila ha estado a punto de desbordar.  
+Un valor de retorno de cero indica que la pila se ha desbordado. Un valor cercano a cero indica que la pila ha estado a punto de desbordar.  
 
         TaskHandle_t getTaskHandle();
 Devuelve el manejador de la tarea.
