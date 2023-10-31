@@ -1,4 +1,6 @@
+#include <Arduino.h>
 #include <threadesp32.h>
+
 
 class Blink : public TaskParent{
 
@@ -51,7 +53,7 @@ class Blink : public TaskParent{
 
 };
 
-Blink led("TaskLed",LED_BUILTIN);
+Blink led("TaskLed",2);
 
 void setup() {
   Serial.begin(115200);
@@ -71,4 +73,3 @@ void loop() {
 
   
 }
-
