@@ -1,10 +1,11 @@
 #pragma once
 
 #include <Arduino.h>
+#if defined(ESP8266)
+    #pragma "only esp32!!!"
+#elif defined(ESP32)
+
 #include <freertos/FreeRTOS.h>
-
- 
-
 
 class TaskParent{
     public:
@@ -43,5 +44,14 @@ class TaskParent{
 
 };
 
+
+
+
+
+
+#endif
+
+
+ 
 
 

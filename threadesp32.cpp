@@ -1,6 +1,11 @@
 #include <threadesp32.h>
 
 
+#if defined(ESP8266)
+    #pragma "only esp32!!!"
+#elif defined(ESP32)
+
+
 TaskParent::TaskParent(const char* _name, uint32_t _stackDepth, UBaseType_t _uxPriority, BaseType_t _xCoreID = 0){
     stackDepth = _stackDepth;
     if(_uxPriority >  configMAX_PRIORITIES){
@@ -66,3 +71,5 @@ UBaseType_t TaskParent::getWaterMark(){
 TaskHandle_t TaskParent::getTaskHandle(){
     return taskHandle;
 }
+
+#endif
